@@ -1,5 +1,5 @@
 const axios = require('axios');
-const { processCategories, processProducts, processDataProduct } = require('../utils/processData');
+const { processCategories, processListProducts, processDataProduct } = require('../utils/processData');
 
 /**
  * @object obj author challenge
@@ -24,7 +24,7 @@ const searchProducts = async (req, res) => {
         })
         .then(function (data) {
             const categories = processCategories(data.filters);
-            const items = processProducts(data.results.slice(0, 4));
+            const items = processListProducts(data.results.slice(0, 4));
             const body = {
                 ...author,
                 categories,

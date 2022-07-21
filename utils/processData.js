@@ -15,7 +15,7 @@ exports.processCategories = (data) => {
  * @param data (Array) - Items from endpoint MELI
  * @returns Product array data by category
  */
-exports.processProducts = (data) => {
+exports.processListProducts = (data) => {
     return data.map((product) => {
         return basicDataProducts(product)
     });
@@ -31,7 +31,6 @@ exports.processProducts = (data) => {
 exports.processDataProduct = (data, description) => {
     return basicDataProducts(data, description);
 }
-
 
 /**
  * Create JSON with data ordered from item MELI
